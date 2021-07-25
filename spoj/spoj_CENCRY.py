@@ -1,5 +1,6 @@
 import string
 from collections import defaultdict
+import sys
 vowels = {"a":0, "e":1, "i": 2, "o":3, "u":4}
 consonents = {v:k for k, v in enumerate(sorted(string.ascii_lowercase-vowels.keys()))}
 
@@ -9,7 +10,7 @@ consonents_x = {v:k for (k,v) in consonents.items()}
 
 for _ in range(int(input())):
     count = defaultdict(int)
-    string = input()
+    string = sys.stdin.readline()[:-1]
     encrypted = []
 
     for s in string:
@@ -23,4 +24,4 @@ for _ in range(int(input())):
 
         count[s] += 1
     
-    print(*encrypted, sep='')
+    print("".join(encrypted))
