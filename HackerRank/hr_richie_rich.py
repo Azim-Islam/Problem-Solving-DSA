@@ -1,5 +1,4 @@
 n, k = map(int, input().split())
-cpy_k = k
 string = input()
 
 first_half = []
