@@ -61,16 +61,9 @@ fn main(){
         }
     }
 
-    for i in first_half{
-        print!("{}", i);
-    }
-    
-    for i in middle{
-        print!("{}", i);
-    }
-    
-    for i in last_half{
-        print!("{}", i);
-    }
+    let answer = [first_half.into_iter().collect::<String>(), 
+                        middle.into_iter().collect::<String>(), 
+                        last_half.into_iter().collect::<String>()].join("");
 
+    println!("{}", answer);
 }
