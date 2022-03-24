@@ -1,5 +1,4 @@
 from functools import reduce
-import gc
 from math import gcd
 for _ in range(int(input())):
     n = int(input())
