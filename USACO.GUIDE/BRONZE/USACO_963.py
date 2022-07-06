@@ -1,28 +1,27 @@
-from collections import defaultdict
-inputs = open('gymnastics.in', 'r')
-# print = lambda x : open('gymnastics.out', 'w').write(str(x)+'\n')
+read = open('gymnastics.in', 'r').readline
+write = lambda x : open('gymnastics.out', 'w').write(str(x))
 
-k, n = map(int, inputs.readline().split())
-arr = []
-for _ in range(k):
-    arr.append(list(map(int, inputs.readline().split())))
+def solve():
+    k, n = map(int, read().split())
+    arr = []
+    rev_arr = []
+    for i in range(k):
+        arr.append(list(map(int, read().split())))
+        rev_arr.append([0]*(n+1))
+        for i in range(n):
+            rev_arr[-1][arr[-1][i]] = i  
+    count = 0
+    for i in range(n):
+        v = arr[0][i]
+        for j in range(i+1, n):
+            u = arr[0][j]
+            bool_c = True
+            for c in range(1, k):
+                v0, u0 = rev_arr[c][v], rev_arr[c][u]
+                if v0 > u0:
+                    break
+            else:
+                count +=1
+    write(count)
 
-dlist = lambda : [99999, -1]
-cow_pos = defaultdict(dlist)
-
-for i in arr:
-    for j in range(len(i)):
-        #(min, max) position of the Nth cow!
-        cow_pos[i[j]][0] = min(j, cow_pos[i[j]][0])
-        cow_pos[i[j]][1] = max(j, cow_pos[i[j]][1])
-n -= 1
-max_ = n*(n+1)//2
-
-minus = 0
-for i in cow_pos.values():
-    minus += abs(i[0]-i[1])
-    
-minus = minus//2
-
-
-print(max_-minus)
+solve()
