@@ -24,7 +24,6 @@ def solve():
             for k in range(j+1, m):
                 for o in range(n):
                     a[(i, j, k)].add("".join([p[o][i], p[o][j], p[o][k]]))
-    count = 0
     for i in range(m):
         for j in range(i+1, m):
             for k in range(j+1, m):
