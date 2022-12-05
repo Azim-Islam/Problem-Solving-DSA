@@ -33,4 +33,4 @@ order_permutations = permutations(cows)
 for order in order_permutations:
     if check_valid(order, d):
         print(*order, sep="\n", file=fout)
-        break
+        break   
