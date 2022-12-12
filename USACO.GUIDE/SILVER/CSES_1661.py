@@ -18,4 +18,3 @@ for i, v in enumerate(arr):
     ans += count[t]
     count[cum[-1]] += 1
 print(ans)
-    
