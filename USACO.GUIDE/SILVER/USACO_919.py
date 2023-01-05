@@ -15,7 +15,7 @@ for _ in range(n):
     arr[x2][y1] -= 1
 
 ans = 0
-for i in range(1, 1002):
+for i in range(1, 1002): 
     for j in range(1, 1002):
         arr[i][j] += arr[i-1][j] + arr[i][j-1] - arr[i-1][j-1]
         if arr[i][j] == k:
