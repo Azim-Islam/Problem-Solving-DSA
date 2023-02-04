@@ -5,7 +5,8 @@ input = sys.stdin.readline
 
 
 def compressedIdx(l, ai):
-    return bisect_right(l, ai) - 1
+    # return bisect_right(l, ai) - 1
+    return l[ai]
 
 
 
@@ -28,12 +29,13 @@ def solve():
         indices.add(r-1)
 
     indices = sorted(list(indices))
+    ld = {k:i for i, k in enumerate(indices)}
 
     diff_arr = [0]*(len(indices))
 
     for l, r, v in updates:
-        diff_arr[compressedIdx(indices, l)] += v
-        diff_arr[compressedIdx(indices, r)] -= v
+        diff_arr[compressedIdx(ld, l)] += v
+        diff_arr[compressedIdx(ld, r)] -= v
 
     for i in range(1, len(diff_arr)):
         diff_arr[i] = diff_arr[i] + diff_arr[i-1]
@@ -55,8 +57,8 @@ def solve():
 
     ans = []
     for l, r in queries:
-        l = compressedIdx(indices, l-1) + 1
-        r = compressedIdx(indices, r-1) + 1
+        l = compressedIdx(ld, l-1) + 1
+        r = compressedIdx(ld, r-1) + 1
         ans.append(pref_sum[r] - pref_sum[l])
 
 
