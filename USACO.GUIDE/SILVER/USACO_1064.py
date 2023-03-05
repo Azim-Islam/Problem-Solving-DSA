@@ -28,7 +28,7 @@ m = [[0]*(n+1) for _ in range(n+1)]
 for c in comp:
     m[c[2]][c[3]] = [c[0], 0] #cow id, direction, distance
 
-print("\n".join(map(str, m)))
+# print("\n".join(map(str, m)))
 
 d = defaultdict(set)
 
@@ -55,4 +55,24 @@ for i in range(n*n+1):
                     m[curr_x+1][curr_y] = [c[c0], curr_dist+1]
                     c[x0] = min(n, c[x0]+1)
 
-for i in range()
+print(d)
+ans = defaultdict(int)
+for i in range(1, n+1):
+    #DFS
+    if d[i]:
+        stack = []
+        visited = set()
+        for j in d[i]:
+            # if j not in visited:
+            visited.add(j)
+            stack.append(j)
+        while stack:
+            v = stack.pop()
+            for j in d[v]:
+                # if j not in visited:
+                visited.add(j)
+                stack.append(j)
+        ans[i] = len(visited)
+
+for i in range(1, n+1):
+    print(ans[i])
