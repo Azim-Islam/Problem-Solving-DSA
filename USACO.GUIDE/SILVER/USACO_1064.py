@@ -20,19 +20,3 @@ for i in range(n):
 
 N_cows.sort(key=lambda cow: cow.x)
 E_cows.sort(key=lambda cow: cow.y)
-
-for ncow in N_cows:
-    for ecow in E_cows:
-        if not blocked[ecow.id]:
-            #Check which cow gets blocked
-            if ecow.x < ncow.x and ncow.y < ecow.y:
-                if ncow.x - ecow.x < ecow.y - ncow.y:
-                    #East cow blocks the north cow
-                    blocked[ncow.id] = 1
-                    blames[ecow.id] += blames[ncow.id] + 1
-                    break
-                elif ncow.x - ecow.x > ecow.y - ncow.y:
-                    blocked[ecow.id] = 1
-                    blames[ncow.id] += blames[ecow.id] + 1
-for i in range(n):
-    print(blames[i])
