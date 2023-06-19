@@ -1,3 +1,7 @@
+import sys
+sys.set_int_max_str_digits(10**9)
+
+
 def bin_pow(x, n):
     res = 1
     while n > 0:
@@ -7,8 +11,9 @@ def bin_pow(x, n):
         n >>= 1
     return res
 
+
 def normal_pow(x, n):
     return x**n
 
-print(bin_pow(2, 10**7))
+print(bin_pow(2, 128))
 #print(normal_pow(2, 10**7))
