@@ -137,8 +137,13 @@ for v in qarr:
     if lb == ub and lb == 0:
         ans.append(-1)
     elif lb == ub:
+        c = sarr.pop(lb-1)
+        sarr.insert(c)
         ans.append(sarr.pop(lb-1))
     else:
+        c = sarr.pop(lb)
+        sarr.insert(c)
         ans.append(sarr.pop(lb))
+    
 
 print("\n".join(map(str, ans)), file=stdout)
