@@ -225,3 +225,4 @@ desktop.ini
 .idea/vcs.xml
 .vscode/c_cpp_properties.json
 *.out
+USACO.GUIDE/SILVER/test.py
