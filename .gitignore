@@ -226,3 +226,6 @@ desktop.ini
 .vscode/c_cpp_properties.json
 *.out
 USACO.GUIDE/SILVER/test.py
+USACO.GUIDE/SILVER/Binary Search/a.exe
+*.exe
+*.o
