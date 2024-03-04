@@ -229,3 +229,5 @@ USACO.GUIDE/SILVER/test.py
 USACO.GUIDE/SILVER/Binary Search/a.exe
 *.exe
 *.o
+.vscode/settings.json
+.vscode/settings.json
