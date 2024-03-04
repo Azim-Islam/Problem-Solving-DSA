@@ -3,5 +3,6 @@
     "files.associations": {
         "*.ASM": "cpp",
         "vector": "cpp"
-    }
+    },
+    "python.analysis.autoImportCompletions": true
 }
