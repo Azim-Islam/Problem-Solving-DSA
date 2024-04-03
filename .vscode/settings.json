@@ -2,7 +2,19 @@
     "python.analysis.typeCheckingMode": "basic",
     "files.associations": {
         "*.ASM": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "cmath": "cpp"
     },
     "python.analysis.autoImportCompletions": true
 }
