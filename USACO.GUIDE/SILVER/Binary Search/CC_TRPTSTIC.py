@@ -1,7 +1,3 @@
-
-
-
-
 def check_sum(DP, dist, i, j, K, N, M):
     i0 = max(0, i-dist-1)
     j0 = max(0, j-dist-1)
