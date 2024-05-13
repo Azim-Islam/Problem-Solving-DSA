@@ -30,12 +30,6 @@ def check(x1, y1, x2, y2, time, s):
     y1 += wind_y
     return abs(x1 - x2) + abs(y1 - y2) <= time
 
-
-
-    
-    
-
-
 x1, y1 = map(int, input().split())
 x2, y2 = map(int, input().split())
 n = int(input())
