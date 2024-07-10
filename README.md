@@ -44,7 +44,3 @@ This repository is licensed under the [MIT License](https://opensource.org/licen
 ---
 
 ---
-Learn more:
-1. [GitHub - abhisheknaiidu/awesome-github-profile-readme: 😎 A curated list of awesome GitHub Profile which updates in real time](https://github.com/abhisheknaiidu/awesome-github-profile-readme)
-2. [cool-readme · GitHub Topics · GitHub](https://github.com/topics/cool-readme)
-3. [readme · GitHub Topics · GitHub](https://github.com/topics/readme
