@@ -3,11 +3,6 @@ from math import ceil, sqrt
 input = open('moocast.in', 'r').readline
 out = open('moocast.out', 'w')
 
-n = int(input())
-arr = []
-
-for _ in range(n):
-    arr.append(list(map(int, input().split())))
 
 
 
@@ -15,8 +10,8 @@ for _ in range(n):
 def check(arr, dist):
     #DFS
     count = 1
-    stack = [0]
     visited = [0]*len(arr)
+    stack = [0]
     visited[0] = 1
     f = True
     while stack:
@@ -37,16 +32,23 @@ def check(arr, dist):
     else:
         return False
 
-
-hi = 25_000*25_000//2
-lo = 0
-while lo < hi:
-    mid = (hi+lo)//2
-    if check(arr, mid):
-        hi = mid
-    else:
-        lo = mid + 1
-
+def solve():
+    n = int(input())
+    arr = []
     
-print(hi, file=out)
-# print(hi)
+    for _ in range(n):
+        arr.append(list(map(int, input().split())))
+    
+    hi = 25_000*25_000
+    lo = 0
+    while lo < hi:
+        mid = (hi+lo)//2
+        if check(arr, mid):
+            hi = mid
+        else:
+            lo = mid + 1
+    
+    
+    print(hi, file=out)
+    # print(hi)
+solve()
