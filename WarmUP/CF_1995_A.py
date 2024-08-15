@@ -10,7 +10,7 @@ for _ in range(int(input())):
     while k > 0:
         if n >= k:
             k -= n
-            c += 1
+            c += 1 
             n -= 1
         else:
             k -= n*2
