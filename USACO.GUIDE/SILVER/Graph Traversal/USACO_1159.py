@@ -66,7 +66,7 @@ def main():
             ans = return_min(a, b)
             mid_component = []
             for i, arr in enumerate(components):
-                ans = min(ans, return_min(arr, a) + return_min(arr, b))
+                ans = min(ans, return_min(a, arr) + return_min(b, arr))
 
 
 
