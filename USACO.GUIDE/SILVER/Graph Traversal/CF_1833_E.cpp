@@ -1,3 +1,7 @@
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("avx2,tune=native")
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
