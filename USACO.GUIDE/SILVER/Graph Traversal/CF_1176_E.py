@@ -1,8 +1,11 @@
 from collections import defaultdict
+import gc
 import sys
 
 input = sys.stdin.readline
 out = sys.stdout
+
+gc.disable()
 
 ans = []
 
