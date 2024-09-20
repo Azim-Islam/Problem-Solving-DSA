@@ -1,6 +1,5 @@
 import gc
 gc.disable()
-from math import ceil
 import sys
 
 input = sys.stdin.readline
