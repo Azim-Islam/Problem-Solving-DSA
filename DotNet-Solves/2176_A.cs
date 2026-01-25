@@ -9,7 +9,7 @@ foreach (var __ in Enumerable.Range(0, test_cases))
     var arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
     foreach (var i in Enumerable.Range(1, n-1))
     {
-        ans += arr[i] > arr[0..i].Max() ? 0 : 1;
+        ans += arr[i] < arr[0..i].Max() ? 1 : 0;
     }
     Console.WriteLine(ans);   
 }

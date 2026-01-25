@@ -5,6 +5,6 @@
     seg_size = 0
     
     for i in range(1, n):
-        ans += 0 if (arr[i] > max(arr[0: i])) else 1
+        ans += 1 if (arr[i] < max(arr[0: i])) else 0
 
     print(ans)
