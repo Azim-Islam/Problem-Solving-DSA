@@ -6,58 +6,55 @@ while (t-- > 0)
     var input = Console.ReadLine()!.Split(' ').Select(int.Parse).ToArray();
     var (n, k, p, m) = (input[0], input[1], input[2], input[3]);
     var arr = Console.ReadLine()!.Split(' ').Select(int.Parse).ToArray();
-    var dict = new OrderedDictionary<int, int>();
-
+    var LL = new LinkedList<(int, int)>();
+    var ans = 0;
     foreach (var (i, val) in arr.Index())
     {
-        dict[i + 1] = val;
+        LL.AddLast((i + 1, val));
     }
-
-    var ans = 0;
-    var flag = false;
 
     while (m >= 0)
     {
-        flag = false;
-        foreach (var (i, (card, cost)) in dict.Index())
+        var node = LL.First!;
+        for (var i = 0; i < k; i++)
         {
-            if (i >= k) break;
-            if (card == p && m - cost >= 0)
+            if (node.Value.Item1 == p && node.Value.Item2 <= m)
             {
                 ans += 1;
-                m -= cost;
-                dict.Remove(card);
-                flag = true;
-                dict[card] = cost;
+                m -= node.Value.Item2;
+                LL.Remove(node);
+                LL.AddLast(node);
                 break;
             }
-        }
 
-        if (!flag)
-        {
-            int[] maxx = [0, int.MaxValue];
-            foreach (var (i, (card, cost)) in dict.Index())
+            node = node.Next;
+
+            if (i == k - 1)
             {
-                if (i >= k) break;
-                if (maxx[1] > cost)
+                var lowestNode = LL.First!;
+                var node1 = LL.First!;
+                for (var j = 0; j < k; j++)
                 {
-                    maxx = [card, cost];
+                    if (node1.Value.Item2 < lowestNode.Value.Item2)
+                    {
+                        lowestNode = node1;
+                    }
+                    node1 = node1.Next!;
                 }
-            }
+                LL.Remove(lowestNode);
+                LL.AddLast(lowestNode);
 
-            if (maxx[1] <= m)
-            {
-                m -= maxx[1];
-                dict.Remove(maxx[0]);
-                dict[maxx[0]] = maxx[1];
-            }
-            else
-            {
-                goto breakOut;
+                if (lowestNode.Value.Item2 <= m)
+                {
+                    m -= lowestNode.Value.Item2;
+                }
+                else
+                {
+                    goto printAns;
+                }
             }
         }
     }
-
-    breakOut:
+    printAns:
     Console.WriteLine(ans);
 }
